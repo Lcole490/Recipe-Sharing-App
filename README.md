@@ -1,18 +1,12 @@
 # Group7-Project2
 
-
 ### Holli-Share App (New Name TBD)
-
 
 Purpose:
 
--   This app is a recipe sharing app that allows users to post and share recipes that encapsulate the holiday season. 
-    The recipes are available for users to search by holiday, meal type, or creator of the recipe. 
-    As such, when a user submits their recipe idea, they will be able to categorize it as above (holiday and meal type).
-
-
-
-
+- This app is a recipe sharing app that allows users to post and share recipes that encapsulate the holiday season.
+  The recipes are available for users to search by holiday, meal type, or creator of the recipe.
+  As such, when a user submits their recipe idea, they will be able to categorize it as above (holiday and meal type).
 
 Initial Goals for App:
 
@@ -32,7 +26,6 @@ Initial Goals for App:
         > Entrees        > Side Dishes          > Desserts          > Drinks
 
 
-
 ### Initial Structure:
 
     * Site will feature 4 pages for user interaction
@@ -50,7 +43,6 @@ Initial Goals for App:
     -->  Search Page: User is presented with a search field. Kind of search they can made is TBD (search by main item, ingredient, etc)
                       When the search is submitted, table is returned with recipes related to the search
                       Table can display name of dish, submitted by, rating, picture, short summary of dish
-
     -->  Recipe Submittal Page: Primarily a form is presented to the user. They will be able to select the category of the dish (Entree, Side, Dessert, Drink)
                                 and also be able to type in the main ingredient (Chicken, Fish, Potatoes, etc). The form will have areas for the user to enter
                                 the name of the dish in addition to including their own name as the author if they desire to. A textarea will be provided 
@@ -59,11 +51,9 @@ Initial Goals for App:
     -->  Individual Recipe Page: When user selects a recipe from the search page, they are then transferred to a separate page that is dedicated to that recipe.
                                  On this page, they can see the picture of the dish, more detailed directions, and comments left by other users
 
-
 ### Library:
 
 We will be using Datatables as our library to house info from recipe in a table format on the search results page
-
 
 
 ### Future Scope:
@@ -79,12 +69,6 @@ We will be using Datatables as our library to house info from recipe in a table 
 
     > ADVANCED: Incorporate algorithms or user history to recommend future recipes or users/cookbooks to subscribe to.
 
-    
-
 
 ### More Information to Follow ....
-
-
-
-
 
