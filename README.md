@@ -1,5 +1,9 @@
 # Group7-Project2
 
+<<<<<<< HEAD
+=======
+Adding a line to this readme.
+>>>>>>> 7de49011178b26c2d3493c463ea3f74fb0b3ae32
 
 ### Holli-Share App
 
@@ -53,3 +57,11 @@ Library:
 
 We will be using Datatables as our library to house info from recipe
 
+<<<<<<< HEAD
+=======
+I am adding a 3rd line. Yeah! Awesome. Kickin' ass.
+
+adding another line
+
+tired of adding lines
+>>>>>>> 7de49011178b26c2d3493c463ea3f74fb0b3ae32
