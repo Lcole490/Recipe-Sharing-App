@@ -63,6 +63,13 @@ VALUES
     'make the spaghetti. freeze the spaghetti. once frozen, pour magic shell over frozen spaghetti and stick peppermint sticks in it. springle rosemary over the spaghetti. serve with garlic bread and red wine',
     'fall',
     1
+  ),
+  (
+    'Classic Stuffed Mushrooms',
+    'walnuts, herbs, garlic, chopped mushroom stems, breadcrumbs, grated parmesan',
+    'Separate the stems from the mushroom caps and chop them. Process with herbs and breadcrumbs and stuff the mushroom caps with the mixture. Sprinkle with parmesan and bake until the cheese starts to brown and the mushroom caps release some of their water.',
+    'spring',
+    3
   );
 
 INSERT INTO
@@ -72,6 +79,11 @@ VALUES
     "Good god almighty! Who the hell would eat this. Wait...Oh my! It's really good. No. It's freakin' awesome! A-W-E-S-O-M-E-!-!-!",
     3,
     1
+  ),
+  (
+    'These mushrooms are delicious',
+    1,
+    2
   );
 
 INSERT INTO
