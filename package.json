@@ -1,20 +1,17 @@
 {
-  "name": "Group7-Project2",
+  "name": "group7-project2",
   "version": "1.0.0",
   "description": "### Holli-Share App (New Name TBD)",
   "main": "server.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "export PORT=3000; nodemon server.js"
+    "dev-watch": "export PORT=3000; nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lcole490/Group7-Project2.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -24,7 +21,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "mysql2": "^2.0.2",
+    "mysql2": "^2.0.2"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.1"
   }
 }
