@@ -55,7 +55,9 @@ Initial Goals for App:
 
 We will be using Datatables as our library to house info from recipe in a table format on the search results page
 
+## Sketch
 
+<img src="assets/images/Home Page Sketch.png" style="width='100%'">
 ### Future Scope:
 
 *   User authentication/ login. 
@@ -72,3 +74,5 @@ We will be using Datatables as our library to house info from recipe in a table 
 
 ### More Information to Follow ....
 
+## Link to Assignment:
+https://gt.bootcampcontent.com/GT-Coding-Boot-Camp/gt-atl-fsf-pt-08-2019-u-c/wikis/Project-02
