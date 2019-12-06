@@ -56,20 +56,29 @@ VALUES
   ("Upshaw", "Nick", "nick@fake-email.com");
 
 INSERT INTO
-  recipes (title, ingredients, directions, season, user_id)
+  recipes (
+    title,
+    main_ingredient,
+    ingredients,
+    directions,
+    category,
+    user_id
+  )
 VALUES
   (
     'Frozen Chocolate Spaghetti Peppermint Balls',
+    'tomato sauce',
     'tomato sauce, noodles, magic shell, pepermint sticks, rosemary',
     'make the spaghetti. freeze the spaghetti. once frozen, pour magic shell over frozen spaghetti and stick peppermint sticks in it. springle rosemary over the spaghetti. serve with garlic bread and red wine',
-    'fall',
+    'entree',
     1
   ),
   (
     'Classic Stuffed Mushrooms',
+    "mushrooms",
     'walnuts, herbs, garlic, chopped mushroom stems, breadcrumbs, grated parmesan',
     'Separate the stems from the mushroom caps and chop them. Process with herbs and breadcrumbs and stuff the mushroom caps with the mixture. Sprinkle with parmesan and bake until the cheese starts to brown and the mushroom caps release some of their water.',
-    'spring',
+    'side dish',
     3
   );
 
