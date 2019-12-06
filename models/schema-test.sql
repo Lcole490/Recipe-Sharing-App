@@ -17,16 +17,16 @@ CREATE TABLE users (
 CREATE TABLE recipes (
   recipe_id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   title VARCHAR(175) NOT NULL,
+  main_ingredient VARCHAR(40) NOT NULL,
   ingredients TEXT NOT NULL,
   directions TEXT NOT NULL,
   votes TINYINT NOT NULL DEFAULT 0,
-  season
+  category
   SET
     (
-      'fall',
-      'winter',
-      'spring',
-      'summer'
+      'entree',
+      'side dish',
+      'dessert'
     ),
     user_id INTEGER UNSIGNED NOT NULL,
     added TIMESTAMP NOT NULL DEFAULT NOW(),
@@ -52,7 +52,8 @@ VALUES
   ('Bodnar', 'Jonathan', 'jon@fake-email.com'),
   ('Oliver', 'Kaiisha', 'kaiisha@fake-email.com'),
   ('Cole', 'Lavar', 'lavar@fake-email.com'),
-  ('Kolli', 'Aruna', 'aruna@fake-email.com');
+  ('Kolli', 'Aruna', 'aruna@fake-email.com'),
+  ("Upshaw", "Nick", "nick@fake-email.com");
 
 INSERT INTO
   recipes (title, ingredients, directions, season, user_id)
@@ -76,7 +77,7 @@ INSERT INTO
   comments (comment_text, user_id, recipe_id)
 VALUES
   (
-    "Good god almighty! Who the hell would eat this. Wait...Oh my! It's really good. No. It's freakin' awesome! A-W-E-S-O-M-E-!-!-!",
+    "Good god almighty! Who the hell would eat this. Wait...Oh my! It's really good. No. It's freakin' awesome! A-W-E-S-O-M-E-!",
     3,
     1
   ),
