@@ -4,7 +4,7 @@ let holidayDB;
 if (process.env.JAWSDB_URL) {
   holidayDB = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
-  // Update with appropropriate local settings for development
+  // Update with appropropriate local settings for development db
   holidayDB = mysql.createConnection({
     host: "localhost",
     port: 3306,
