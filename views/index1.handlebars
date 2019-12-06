@@ -1,0 +1,80 @@
+<style>
+  .home-hero {
+    background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?holiday') no-repeat fixed center center / cover;
+    min-height: 400px;
+  }
+  
+  .home-hero h1, .home-hero p {
+    text-shadow: 0px 1px 2px hsla(0, 0%, 0%, .22);
+  }
+
+  .fake-nav {
+    background: #333;
+    padding: 1rem;
+    color:white;
+  }
+
+  .nav a {
+    color:white;
+  }
+</style>
+<div class="container-fluid home-hero">
+  <h1 class="display-1 text-center py-5">
+    INDEX1
+  </h1>
+  <p class="text-center">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim consequuntur facere?
+  </p>
+</div>
+<ul class="nav navbar navbar-dark bg-dark justify-content-center mb-5">
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      link
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      Link
+    </a>
+  </li>
+</ul>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Category
+        </th>
+        <th>
+          Main Ingredient
+        </th>
+        <th>
+          Votes
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each recipe}}
+        <tr>
+          <td>
+            <a href="/api/recipes/{{recipe_id}}">
+              {{title}}
+            </a>
+          </td>
+          <td>
+            {{category}}
+          </td>
+          <td>
+            {{main_ingredient}}
+          </td>
+          <td>
+            {{votes}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

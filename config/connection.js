@@ -1,19 +1,25 @@
-var mysql = require("mysql2");
+const mysql = require("mysql2");
+let holidayDB;
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "docker",
-  database: "holiday"
-});
+if (process.env.JAWSDB_URL) {
+  holidayDB = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  // Update with appropropriate local settings for development
+  holidayDB = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "docker",
+    database: "holiday"
+  });
+}
 
-connection.connect(error => {
+holidayDB.connect(error => {
   if (error) {
-    console.error("Error connecting: " + error.stack);
-    return;
+    console.log(error.stack);
+  } else {
+    console.log(`Connection threadId: ${holidayDB.threadId}`);
   }
-  console.log("Connection id is " + connection.threadId);
 });
 
-module.exports = connection;
+module.exports = holidayDB;

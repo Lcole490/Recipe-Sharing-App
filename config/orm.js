@@ -1,11 +1,11 @@
-var connection = require("./connection.js");
+const holidayDB = require("./connection.js");
 
-var orm = {
-  all: function(table, cb) {
-    var queryString = `SELECT * FROM ${table};`;
-    connection.query(queryString, function(error, results) {
+const orm = {
+  selectAll(table, cb) {
+    const query = "SELECT * FROM ??";
+    holidayDB.query(query, [table], (error, rows) => {
       if (error) throw error;
-      cb(results);
+      else cb(rows);
     });
   }
 };
