@@ -12,6 +12,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
+
+// Passport/Authentication
+app.set ('view-engine', 'ejs')
+
+app.get('/', (req, res) => {
+res.render('index.ejs', {name: "Nick"})
+})
+
+app.get('/login', (req, res) => {
+  res.render('login.ejs', {name: "Nick"})
+  })
+
+app.get('/register', (req, res) => {
+  res.render('register.ejs', {name: "Nick"})
+  })
+
 // Handlebars
 app.engine(
   "handlebars",
@@ -19,7 +35,7 @@ app.engine(
     defaultLayout: "main"
   })
 );
-app.set("view engine", "handlebars");
+app.set("view engine", "handlebars" ,);
 
 // Routes
 require("./routes/apiRoutes")(app);
