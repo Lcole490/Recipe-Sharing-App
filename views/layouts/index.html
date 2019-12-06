@@ -24,7 +24,32 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"
+    />
+
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"
+    ></script>
+
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <table data-order='[[ 1, "asc" ]]' data-page-length="25">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>author's name</th>
+          <th></th>
+          <th>Ingredient</th>
+          <th>rating</th>
+          <!-- <th data-class-name="priority">Salary</th> -->
+        </tr>
+      </thead>
+    </table>
+  </body>
 </html>
