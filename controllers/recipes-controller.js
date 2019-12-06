@@ -14,6 +14,13 @@ router.get("/index1", (request, response) => {
   });
 });
 
+router.get("/api/recipes/:id", (request, response) => {
+  
+  orm.selectOne("recipes", request.params.id, rows => {
+    response.json(rows);
+  });
+});
+
 // GET API route to retrieve all recipes
 router.get("/api/recipes", (request, response) => {
   orm.selectAll("recipes", rows => {

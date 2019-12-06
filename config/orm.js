@@ -7,6 +7,13 @@ const orm = {
       if (error) throw error;
       else cb(rows);
     });
+  },
+  selectOne(table, id, cb) {
+    const query = "SELECT * FROM ?? WHERE recipe_id = ?";
+    holidayDB.query(query, [table, id], (error, rows) => {
+      if (error) throw error;
+      else cb(rows);
+    });
   }
 };
 
