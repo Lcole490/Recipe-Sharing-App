@@ -1,17 +1,20 @@
 <table id="table_id" class="display">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Body</th>
+            <th>Name</title>
+            </th>
+            <th>Author</th>
+            <th>Ingredients</th>
+            <th>Rating</th>
         </tr>
     </thead>
     <tbody>
         {{#each recipes}}
         <tr>
-            <td>{{this.name}}</td>
-            <td>{{this.email}}</td>
-            <td>{{this.body}}</td>
+            <td>{{this.Name}}</td>
+            <td>{{this.Author}}</td>
+            <td>{{this.Ingredients}}</td>
+            <td>{{this.Rating}}</td>
         </tr>
         {{/each}}
     </tbody>
