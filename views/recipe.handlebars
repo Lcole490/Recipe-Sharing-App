@@ -1,3 +1,28 @@
 <div class="container">
-  <H1>Test</H1>
+  {{#each recipe}}
+    
+  
+  <dl>
+    <dt>title</dt>
+    <dd>{{title}}</dd>
+    <dt>main_ingredient</dt>
+    <dd>{{main_ingredient}}</dd>
+    <dt>ingredients</dt>
+    <dd>{{ingredients}}</dd>
+    <dt>directions</dt>
+    <dd>{{directions}}</dd>
+    <dt>votes</dt>
+    <dd>{{votes}}</dd>
+    <dt>category</dt>
+    <dd>{{category}}</dd>
+    <dt>creator</dt>
+    <dd>{{creator}}</dd>
+    <dt>email</dt>
+    <dd>{{email}}</dd>
+    <dt>date_added</dt>
+    <dd>{{date_added}}</dd>
+  </dl>
+    
+    
+  {{/each}}
 </div>
