@@ -13,7 +13,7 @@ const orm = {
   // ...does not include recipe comments.
   selectFullRecipe(id, cb) {
     const query =
-      "SELECT title, main_ingredient, ingredients, directions, votes, category, last_name, first_name, email, DATE_FORMAT(recipes.added, '%W, %M %d, %Y') FROM recipes INNER JOIN users ON recipes.user_id = users.user_id WHERE recipe_id = ?";
+      "SELECT title, main_ingredient, ingredients, directions, votes, category, CONCAT(first_name, ' ', last_name) as creator, email, DATE_FORMAT(recipes.added, '%W, %M %d, %Y') as date_added FROM recipes INNER JOIN users ON recipes.user_id = users.user_id WHERE recipe_id = ?";
     holidayDB.query(query, [id], (error, rows) => {
       if (error) throw error;
       else cb(rows);
