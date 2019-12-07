@@ -16,10 +16,13 @@ router.get("/recipe/:id", (request, response) => {
   orm.selectFullRecipe(request.params.id, recipe => {
     orm.selectRecipeComments(request.params.id, comments => {
       recipe.comments = comments;
-      console.log(recipe);
       response.render("recipe", { recipe });
     });
   });
+});
+
+router.get("/add-recipe", (request, response) => {
+  response.render("add-recipe");
 });
 
 // ----- API / JSON ROUTES ----- //
