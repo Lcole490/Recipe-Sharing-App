@@ -1,38 +1,38 @@
+
+
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $recipeAuthor = $("#recipe-author");
+var $recipeName = $("#recipe-name");
+var $recipeMainIngredient = $("#recipe-main");
+var $recipeOtherIngredients = $("#recipe-other");
+var $recipeDirections = $("#recipe-directions");
+var $recipeCategory = $("#recipe-category");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  submitRecipe: function(example) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/recipes",
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getRecipes: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/recipes",
       type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
+var refreshRecipes = function() {
+  API.getRecipes().then(function(data) {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
@@ -65,8 +65,8 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    author: $recipeAuthor.val().trim(),
+    recipe: $recipeName.val().trim()
   };
 
   if (!(example.text && example.description)) {
@@ -74,26 +74,15 @@ var handleFormSubmit = function(event) {
     return;
   }
 
-  API.saveExample(example).then(function() {
+  API.submitRecipe(example).then(function() {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $recipeAuthor.val("");
+  $recipeName.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
+// Add event listeners to the submit button
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
