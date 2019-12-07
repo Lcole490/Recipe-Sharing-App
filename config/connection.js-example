@@ -1,3 +1,4 @@
+// Rename this file connection.js and update local db settings below
 const mysql = require("mysql2");
 let holidayDB;
 
