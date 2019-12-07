@@ -1,0 +1,23 @@
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Body</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each recipes}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.body}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $('#table_id').DataTable();
+    });
+</script>
