@@ -18,6 +18,15 @@ const orm = {
       if (error) throw error;
       else cb(rows);
     });
+  },
+  // Selects all comments on an individual recipe
+  selectRecipeComments(id, cb) {
+    const query =
+      "SELECT comment_text, DATE_FORMAT(comments.added, '%W, %M %d, %Y') AS added, CONCAT(first_name, ' ', last_name) AS commenter FROM comments INNER JOIN users ON comments.user_id = users.user_id WHERE comments.recipe_id = ?";
+    holidayDB.query(query, [id], (error, rows) => {
+      if (error) throw error;
+      else cb(rows);
+    });
   }
 };
 

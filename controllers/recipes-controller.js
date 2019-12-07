@@ -26,6 +26,12 @@ router.get("/api/recipes", (request, response) => {
   });
 });
 
+router.get("/api/recipe-comments/:id", (request, response) => {
+  orm.selectRecipeComments(request.params.id, comments => {
+    response.json(comments);
+  });
+});
+
 router.get("/api/recipes/:id", (request, response) => {
   orm.selectFullRecipe(request.params.id, rows => {
     response.json(rows);
