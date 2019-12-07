@@ -1,8 +1,14 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var simplecrypt = require("simplecrypt");
 
 var db = require("./models");
+
+var initializePassport = require("./passport.config")
+initializePassport(passport, email =>{
+  return users.find(user)
+});
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -14,8 +20,10 @@ app.use(express.static("public"));
 
 
 // Passport/Authentication
-app.set ('view-engine', 'ejs')
 
+var users = []
+app.set ('view-engine', 'ejs')
+app.use(express.urlencoded({extended: false}))
 app.get('/', (req, res) => {
 res.render('index.ejs', {name: "Nick"})
 })
@@ -24,9 +32,22 @@ app.get('/login', (req, res) => {
   res.render('login.ejs', {name: "Nick"})
   })
 
+  app.post('/regster', (req, res) => {
+  
+  })
+
 app.get('/register', (req, res) => {
   res.render('register.ejs', {name: "Nick"})
   })
+
+app.post('/regster', async (req, res) => {
+   try{
+     var hashedPassword = simplecrypt.hash(req.body.password)
+   }catch{
+
+   }
+   req.body.email
+})
 
 // Handlebars
 app.engine(
