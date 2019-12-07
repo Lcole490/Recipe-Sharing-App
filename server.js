@@ -2,13 +2,16 @@ require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 var simplecrypt = require("simplecrypt");
-
+var passport = require("passport")
+var flash = require("express-flash")
+var flash = require("express-session")
 var db = require("./models");
 
 var initializePassport = require("./passport.config")
-initializePassport(passport, email =>{
-  return users.find(user)
-});
+initializePassport(
+  passport, 
+  email => users.find(user => user.email === email)
+);
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -17,7 +20,10 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
-
+app.use(flash())
+app.use(session({
+  secret:
+}))
 
 // Passport/Authentication
 
