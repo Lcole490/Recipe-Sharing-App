@@ -1,33 +1,73 @@
 <div class="container">
   <form action="POST">
-    <div class="form-group">
-      <label for="authorfield">Author</label>
-      <input type="text" class="form-control" id="recipe-author" placeholder="Type Your Name Here...">
-    </div>
-    <div class="form-group">
-      <label for="recipeNameField">Name of Recipe</label>
-      <input type="text" class="form-control" id="recipe-name" placeholder="Recipe Title Goes Here">
-    </div>
-    <div class="form-group">
-      <label for="mainIngredientField">Main Ingredient</label>
-      <input type="text" class="form-control" id="recipe-main" placeholder="Main item, ie: chicken, fish, etc">
-    </div>
-    <div class="form-group">
-      <label for="otherIngredientsField">Other Ingredients</label>
-      <input type="text" class="form-control" id="recipe-other" placeholder="Type Your Name Here...">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Recipe Category</label>
-      <select class="form-control" id="recipe-category">
-        <option>Entree</option>
-        <option>Side Dish</option>
-        <option>Dessert </option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Directions</label>
-      <textarea class="form-control" id="recipe-directions" rows="7"></textarea>
-    </div>
+    <fieldset>
+      <legend>Your Information</legend>
+
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input class="form-control" type="text" id="first_name" name="first_name" placeholder="First name">
+      </div>
+
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input class="form-control" type="text" id="last_name" name="last_name" placeholder="Last name">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" type="email" id="email" name="email" placeholder="email">
+      </div>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Recipe Information</legend>
+
+
+      <div class="form-group">
+        <label for="title">Name of Recipe</label>
+        <input type="text" class="form-control" id="titme" name="title" placeholder="Super Awesome Recipe Name">
+      </div>
+
+      <div class="form-group">
+        <label for="main_ingredient">Main Ingredient</label>
+        <input list="suggestions" type="text" class="form-control" id="main_ingredient" name="main_ingredient"
+          placeholder="Main ingredient, e.g. chicken">
+        <datalist id="suggestions">
+          {{!-- Update this with call to db to get all possible/already entered main ingredients --}}
+          <option value="chicken"></option>
+          <option value="fish"></option>
+          <option value="chocolate"></option>
+          <option value="peppers"></option>
+          <option value="toast"></option>
+        </datalist>
+      </div>
+
+      <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <input type="text" class="form-control" id="ingredients" aria-describedby="ingredients-help"
+          placeholder="Enter ingredients as comma separted list">
+        <small id="ingredients-help" class="form-text text-muted">Enter ingredients as a comma separated list, e.g.: chicken,
+          onions, peppers</small>
+      </div>
+      <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <input type="text" class="form-control" id="recipe-other" placeholder="Type Your Name Here...">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Recipe Category</label>
+        <select class="form-control" id="recipe-category">
+          <option>Entree</option>
+          <option>Side Dish</option>
+          <option>Dessert </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Directions</label>
+        <textarea class="form-control" id="recipe-directions" rows="7"></textarea>
+      </div>
+    </fieldset>
+
 
     <button id="submit" class="btn btn-primary float-right">Submit Your Recipe</button>
   </form>
