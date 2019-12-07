@@ -4,10 +4,17 @@ const orm = require("../config/orm.js");
 
 // ----- PAGE ROUTES ----- //
 
-// GET API route for test homepage
+// GET route for homepage
 router.get("/", (request, response) => {
   orm.selectAll("recipes", rows => {
     response.render("index", { recipe: rows });
+  });
+});
+
+// GET route for single recipe page
+router.get("/recipe/:id", (request, response) => {
+  orm.selectFullRecipe(request.params.id, recipe => {
+    response.render("recipe", { recipe });
   });
 });
 
