@@ -3,15 +3,11 @@ const router = express.Router();
 const orm = require("../config/orm.js");
 
 // ----- PAGE ROUTES ----- //
-// GET API route for homepage, just the homepage, no data processing
-router.get("/", (request, response) => {
-  response.render("index");
-});
 
-// GET API route for test homepage (index1.html) with call for all recipe data
-router.get("/index1", (request, response) => {
+// GET API route for test homepage
+router.get("/", (request, response) => {
   orm.selectAll("recipes", rows => {
-    response.render("index1", { recipe: rows });
+    response.render("index", { recipe: rows });
   });
 });
 
