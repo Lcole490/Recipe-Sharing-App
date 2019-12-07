@@ -1,3 +1,32 @@
+{{!-- FUTURE DESIGN --}}
+<table id="table_id" class="display">
+  <thead>
+    <tr>
+      <th>Title</title></th>
+      <th>Main Ingredient</th>
+      <th>Category</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each recipe}}
+    <tr>
+      <td><a href="/recipe/{{recipe_id}}">
+        {{title}}</a></td>
+      <td>{{main_ingredient}}</td>
+      <td>{{category}}</td>
+      <td>{{votes}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<script>
+  $(document).ready(function () {
+    $('#table_id').DataTable();
+  });
+</script>
+
+
 <style>
   .home-hero {
     background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?holiday') no-repeat fixed center center / cover;
@@ -18,7 +47,7 @@
     color:white;
   }
 </style>
-<div class="container-fluid home-hero">
+{{!-- <div class="container-fluid home-hero">
   <h1 class="display-1 text-center py-5">
     INDEX
   </h1>
@@ -77,4 +106,4 @@
       {{/each}}
     </tbody>
   </table>
-</div>
+</div> --}}
