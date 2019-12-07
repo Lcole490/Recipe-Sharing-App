@@ -14,7 +14,11 @@ router.get("/", (request, response) => {
 // GET route for single recipe page
 router.get("/recipe/:id", (request, response) => {
   orm.selectFullRecipe(request.params.id, recipe => {
-    response.render("recipe", { recipe });
+    orm.selectRecipeComments(request.params.id, comments => {
+      recipe.comments = comments;
+      console.log(recipe);
+      response.render("recipe", { recipe });
+    });
   });
 });
 
@@ -23,6 +27,12 @@ router.get("/recipe/:id", (request, response) => {
 router.get("/api/recipes", (request, response) => {
   orm.selectAll("recipes", rows => {
     response.json(rows);
+  });
+});
+
+router.get("/api/recipe-comments/:id", (request, response) => {
+  orm.selectRecipeComments(request.params.id, comments => {
+    response.json(comments);
   });
 });
 

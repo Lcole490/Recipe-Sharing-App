@@ -1,28 +1,98 @@
 <div class="container">
   {{#each recipe}}
-    
-  
-  <dl>
-    <dt>title</dt>
-    <dd>{{title}}</dd>
-    <dt>main_ingredient</dt>
-    <dd>{{main_ingredient}}</dd>
-    <dt>ingredients</dt>
-    <dd>{{ingredients}}</dd>
-    <dt>directions</dt>
-    <dd>{{directions}}</dd>
-    <dt>votes</dt>
-    <dd>{{votes}}</dd>
-    <dt>category</dt>
-    <dd>{{category}}</dd>
-    <dt>creator</dt>
-    <dd>{{creator}}</dd>
-    <dt>email</dt>
-    <dd>{{email}}</dd>
-    <dt>date_added</dt>
-    <dd>{{date_added}}</dd>
-  </dl>
-    
-    
+    <h1>
+      {{title}}
+    </h1>
+  {{/each}}
+  {{! Accessing information about the recipe }}
+  <h2>
+    Recipe Information
+  </h2>
+  {{#each recipe}}
+    <dl>
+      <dt>
+        title
+      </dt>
+      <dd>
+        {{title}}
+      </dd>
+      <dt>
+        main_ingredient
+      </dt>
+      <dd>
+        {{main_ingredient}}
+      </dd>
+      <dt>
+        ingredients
+      </dt>
+      <dd>
+        {{ingredients}}
+      </dd>
+      <dt>
+        directions
+      </dt>
+      <dd>
+        {{directions}}
+      </dd>
+      <dt>
+        votes
+      </dt>
+      <dd>
+        {{votes}}
+      </dd>
+      <dt>
+        category
+      </dt>
+      <dd>
+        {{category}}
+      </dd>
+      <dt>
+        creator
+      </dt>
+      <dd>
+        {{creator}}
+      </dd>
+      <dt>
+        email
+      </dt>
+      <dd>
+        {{email}}
+      </dd>
+      <dt>
+        date_added
+      </dt>
+      <dd>
+        {{date_added}}
+      </dd>
+    </dl>
+  {{/each}}
+</div>
+{{! Accessing Comments on the Recipe }}
+<div class="container">
+  <h2>
+    Comments on the Recipe
+  </h2>
+  {{#each recipe.comments}}
+    <dl>
+      <dt>
+        comment_text
+      </dt>
+      <dd>
+        {{this.comment_text}}
+      </dd>
+      <dt>
+        added
+      </dt>
+      <dd>
+        {{this.added}}
+      </dd>
+      <dt>
+        commenter
+      </dt>
+      <dd>
+        {{this.commenter}}
+      </dd>
+    </dl>
+    <hr />
   {{/each}}
 </div>
