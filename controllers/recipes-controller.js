@@ -15,8 +15,7 @@ router.get("/index1", (request, response) => {
 });
 
 router.get("/api/recipes/:id", (request, response) => {
-  
-  orm.selectOne("recipes", request.params.id, rows => {
+  orm.selectOne(request.params.id, rows => {
     response.json(rows);
   });
 });
