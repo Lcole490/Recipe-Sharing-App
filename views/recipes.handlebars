@@ -1,26 +1,44 @@
-<table id="table_id" class="display">
-    <thead>
-        <tr>
-            <th>Name</title>
-            </th>
-            <th>Author</th>
-            <th>Ingredients</th>
-            <th>Rating</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each recipes}}
-        <tr>
-            <td>{{this.Name}}</td>
-            <td>{{this.Author}}</td>
-            <td>{{this.Ingredients}}</td>
-            <td>{{this.Rating}}</td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
-<script>
-    $(document).ready(function () {
-        $('#table_id').DataTable();
-    });
-</script>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Tis The seasoning
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>“A recipe has no soul, You as the cook must bring soul to the recipe”</p>
+                <footer class="blockquote-footer"> <cite title="Source Title">Thomas Keller</cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>Name</title>
+                </th>
+                <th>Author</th>
+                <th>Ingredients</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each recipes}}
+            <tr>
+                <td>{{this.Name}}</td>
+                <td>{{this.Author}}</td>
+                <td>{{this.Ingredients}}</td>
+                <td>{{this.Rating}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });
+    </script>
+    <button type="button" class="btn btn-dark" onmouseover="Insert your recipe">Impress me</button>
+
+
+</div>
