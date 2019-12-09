@@ -1,16 +1,23 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var simplecrypt = require("simplecrypt");
+var bcryptjs = require("bcryptjs");
 var passport = require("passport")
 var flash = require("express-flash")
-var flash = require("express-session")
+var session = require("express-session")
+var methodOverride = require('method-override')
+
 var db = require("./models");
 
 var initializePassport = require("./passport.config")
 initializePassport(
   passport, 
-  email => users.find(user => user.email === email)
+  email => users.find(user => user.email === email),
+  id => users.find(user => user.id === id)
 );
 
 var app = express();
@@ -20,40 +27,75 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(flash())
+app.use(flash());
 app.use(session({
-  secret:
-}))
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Passport/Authentication
 
 var users = []
-app.set ('view-engine', 'ejs')
-app.use(express.urlencoded({extended: false}))
-app.get('/', (req, res) => {
+app.set ('view-engine', 'ejs');
+app.use(express.urlencoded({extended: false}));
+
+app.get('/', checkAuthenticated, (req, res) => {
 res.render('index.ejs', {name: "Nick"})
-})
+});
 
-app.get('/login', (req, res) => {
+app.get('/login', checkNotAuthenticated, (req, res) => {
   res.render('login.ejs', {name: "Nick"})
-  })
+  });
 
-  app.post('/regster', (req, res) => {
-  
-  })
+app.post('/login',checkNotAuthenticated, passport.authenticate('local', {
+  successRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: true,
+}));  
 
-app.get('/register', (req, res) => {
+app.get('/register', checkNotAuthenticated, (req, res) => {
   res.render('register.ejs', {name: "Nick"})
   })
 
-app.post('/regster', async (req, res) => {
+app.post('/register', checkNotAuthenticated, async (req, res) => {
    try{
-     var hashedPassword = simplecrypt.hash(req.body.password)
+     const hashedPassword = await bcryptjs.hash(req.body.password, 10)
+     users.push({
+       id: Date.now().toString(),
+       name: req.body.name,
+       email: req.body.email,
+       password: hashedPassword,
+     })
+     console.log (users)
+     res.redirect('/login')
    }catch{
-
+     res.redirect('/register')
    }
-   req.body.email
-})
+});
+
+app.delete('/logout', (req, res) => {
+  req.logOut()
+  res.redirect('/login')
+});
+
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+
+  res.redirect('/login');
+};
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+   return res.redirect('/')
+  }
+
+  return next();
+};
 
 // Handlebars
 app.engine(
