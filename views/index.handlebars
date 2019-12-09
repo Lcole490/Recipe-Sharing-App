@@ -26,7 +26,8 @@
     {{/each}}
   </tbody>
 </table>
-<button class="btn btn-danger btn-lg"><a href="/add-recipe{{add-recipe}}"></a>Add Recipe</button>
+<button class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="bottom" title="Impress Me">
+  Add Recipe<a href="/add-recipe{{add-recipe}}"></a></button>
 <script>
   $(document).ready(function () {
     $('#table_id').DataTable();
@@ -52,7 +53,7 @@
     margin: 100px 150px;
   }
 button {
-  align-content: center
+margin-left: 900px;
 }
 </style>
 {{!-- <div class="container-fluid home-hero">
