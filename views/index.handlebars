@@ -1,9 +1,14 @@
-<div class="container">
+<div class="conainter-fluid">
+  <h1>Tis the Seasoning</h1>
+</div>
+
+
 {{!-- FUTURE DESIGN --}}
-<table id="table_id" class="display">
+<table id="table_id" class="display cell-border compact">
   <thead>
     <tr>
-      <th>Title</title></th>
+      <th>Title</title>
+      </th>
       <th>Main Ingredient</th>
       <th>Category</th>
       <th>Rating</th>
@@ -13,7 +18,7 @@
     {{#each recipe}}
     <tr>
       <td><a href="/recipe/{{recipe_id}}">
-        {{title}}</a></td>
+          {{title}}</a></td>
       <td>{{main_ingredient}}</td>
       <td>{{category}}</td>
       <td>{{votes}}</td>
@@ -21,7 +26,7 @@
     {{/each}}
   </tbody>
 </table>
-</div>
+<button class="btn btn-danger btn-lg"><a href="/add-recipe{{add-recipe}}"></a>Add Recipe</button>
 <script>
   $(document).ready(function () {
     $('#table_id').DataTable();
@@ -30,26 +35,26 @@
 
 
 
-{{!-- <style>
-  .home-hero {
+<style>
+  body {
     background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?holiday') no-repeat fixed center center / cover;
     min-height: 400px;
   }
-  
-  .home-hero h1, .home-hero p {
-    text-shadow: 0px 1px 2px hsla(0, 0%, 0%, .22);
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: red;
+    font-size: 100px;
+    margin-top: 25px;
   }
-
-  .fake-nav {
-    background: #333;
-    padding: 1rem;
-    color:white;
+  #table_id_wrapper.dataTables_wrapper.no-footer {
+    max-width: 1080px;
+    margin: 100px 150px;
   }
-
-  .nav a {
-    color:white;
-  }
-</style> --}}
+button {
+  align-content: center
+}
+</style>
 {{!-- <div class="container-fluid home-hero">
   <h1 class="display-1 text-center py-5">
     INDEX
@@ -109,4 +114,20 @@
       {{/each}}
     </tbody>
   </table>
+
+
+  .home-hero h1,
+  .home-hero p {
+    text-shadow: 0px 1px 2px hsla(0, 0%, 0%, .22);
+  }
+
+  .fake-nav {
+    background: #333;
+    padding: 1rem;
+    color: white;
+  }
+
+  .nav a {
+    color: white;
+  }
 </div> --}}
