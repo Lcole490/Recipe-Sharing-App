@@ -27,7 +27,7 @@
   </tbody>
 </table>
 <button class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="bottom" title="Impress Me">
-  Add Recipe<a href="/add-recipe{{add-recipe}}"></a></button>
+  Add Recipe<a href="/add-recipe"></a></button>
 <script>
   $(document).ready(function () {
     $('#table_id').DataTable();
@@ -41,6 +41,7 @@
     background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?holiday') no-repeat fixed center center / cover;
     min-height: 400px;
   }
+
   h1 {
     font-family: 'Great Vibes', cursive;
     text-align: center;
@@ -48,13 +49,15 @@
     font-size: 100px;
     margin-top: 25px;
   }
+
   #table_id_wrapper.dataTables_wrapper.no-footer {
-    max-width: 1080px;
+    max-width: 75%;
     margin: 100px 150px;
   }
-button {
-margin-left: 900px;
-}
+
+  button {
+    margin-left: 900px;
+  }
 </style>
 {{!-- <div class="container-fluid home-hero">
   <h1 class="display-1 text-center py-5">

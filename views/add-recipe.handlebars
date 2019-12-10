@@ -1,7 +1,7 @@
 <div class="container my-5">
   <h1>Add Your Own Recipe</h1>
   <form method="POST" action="">
-    <fieldset>
+    <fieldset class="user-info">
       <legend>Your Information</legend>
 
       <div class="form-group">
@@ -75,3 +75,21 @@
 
 {{!-- Note, JMB: The draft script below was renamed and won't work becuase I updated the the names and ids for the form fields to match what we need for our db --}}
 {{!-- <script src="/js/index.js"></script> --}}
+
+<style>
+  body {
+    background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?holiday') no-repeat fixed center center / cover;
+    min-height: 400px;
+  }
+  h1 {
+   font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: red;
+    font-size: 100px;
+    margin-top: 25px;
+  }
+  .user-info {
+    
+  }
+  
+</style>
