@@ -31,8 +31,7 @@ CREATE TABLE recipes (
     user_id INTEGER UNSIGNED NOT NULL,
     added TIMESTAMP NOT NULL DEFAULT NOW(),
     PRIMARY KEY (recipe_id),
-    FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE,
-    UNIQUE (title)
+    FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
 ) ENGINE = InnoDB;
 
 CREATE TABLE comments (
@@ -44,4 +43,4 @@ CREATE TABLE comments (
   PRIMARY KEY (comment_id),
   FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE,
   FOREIGN KEY (recipe_id) REFERENCES recipes (recipe_id) ON DELETE CASCADE
-);
+) ENGINE = InnoDB;

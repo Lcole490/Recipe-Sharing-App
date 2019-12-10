@@ -70,8 +70,42 @@ router.get("/api/comments", (request, response) => {
 // add-recipe
 router.post("/add-recipe", (request, response) => {
   const data = request.body;
-  console.log(data);
-  response.redirect("/");
+  const {
+    first_name,
+    last_name,
+    email,
+    title,
+    main_ingredient,
+    ingredients,
+    directions,
+    category
+  } = request.body;
+  orm.findUserByEmail(email, rows => {
+    if (rows.length) {
+      const { user_id } = rows[0];
+      orm.addRecipeKnownUser(
+        [title, main_ingredient, ingredients, directions, category, user_id],
+        result => {
+          console.log(result);
+        }
+      );
+      response.redirect("/");
+    }
+
+    if (!rows.length) {
+      let user_id;
+      orm.addUser([first_name, last_name, email], result => {
+        user_id = result.insertId;
+        orm.addRecipeKnownUser(
+          [title, main_ingredient, ingredients, directions, category, user_id],
+          result => {
+            console.log(result);
+          }
+        );
+      });
+      response.redirect("/");
+    }
+  });
 });
 
 // ===== 404 Page ===== //

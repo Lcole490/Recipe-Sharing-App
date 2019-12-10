@@ -27,6 +27,32 @@ const orm = {
       if (error) throw error;
       else cb(rows);
     });
+  },
+  // findUserByEmail
+  findUserByEmail(email, cb) {
+    const query = "SELECT * FROM users WHERE email = ?";
+    holidayDB.query(query, [email], (error, rows) => {
+      if (error) throw error;
+      else cb(rows);
+    });
+  },
+  // Add recipe, known user
+  addRecipeKnownUser(data, cb) {
+    const query =
+      "INSERT INTO recipes (title, main_ingredient, ingredients, directions, category, user_id) VALUES (?, ?, ?, ?, ?, ?)";
+    holidayDB.query(query, data, (error, rows) => {
+      if (error) throw error;
+      else cb(rows);
+    });
+  },
+  // Add a user
+  addUser(data, cb) {
+    const query =
+      "INSERT INTO users (first_name, last_name, email) VALUES (?, ?, ?)";
+    holidayDB.query(query, data, (error, rows) => {
+      if (error) throw error;
+      else cb(rows);
+    });
   }
 };
 
