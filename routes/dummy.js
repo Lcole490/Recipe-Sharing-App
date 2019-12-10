@@ -17,6 +17,18 @@ module.exports = {
       Author: "Aanya",
       Ingredients: "pasta noodles, mint",
       Rating: "like"
+    },
+    {
+      Name: "Pineapple Pie",
+      Author: "Arnold",
+      Ingredients: "pineapple, sugar, mint",
+      Rating: "like"
+    },
+    {
+      Name: "Gulabjamun",
+      Author: "Aana",
+      Ingredients: "All purpose flour, sugar, butter",
+      Rating: "like"
     }
 
     //     {
