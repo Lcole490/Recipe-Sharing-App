@@ -57,12 +57,6 @@
       {{creator}}
     </dd>
     <dt>
-      E-mail
-    </dt>
-    <dd>
-      {{email}}
-    </dd>
-    <dt>
       Date Added
     </dt>
     <dd>
@@ -72,11 +66,12 @@
     {{/each}}
   </div>
   {{! Accessing Comments on the Recipe }}
+  <br>
 <div class="container">
-  <h2>
-    Comments on the Recipe
-  </h2>
-    <button class="accordion" align= "left">Comments</button>
+  {{!-- <h2>
+    Comments 
+  </h2> --}}
+    <button class="accordion btn-danger" align= "left"><h4>Comments</h4></button>
   <div class="panel">
   {{#each recipe.comments}}
     {{!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -88,9 +83,9 @@
       <dd>
         {{this.comment_text}}
       </dd>
-      <dt>
+      {{!-- <dt>
         added
-      </dt>
+      </dt> --}}
       <dd>
         {{this.added}}
       </dd>
@@ -104,7 +99,7 @@
 
   <style>
     body {
-      background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?holiday') no-repeat fixed center center / cover;
+      background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?christmas') no-repeat fixed center center / cover;
       min-height: 400px;
     }
 
