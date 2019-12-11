@@ -1,48 +1,63 @@
 <div class="container my-5">
-  <h1>Add Your Own Recipe</h1>
+  <h1>
+    Add Your Own Recipe
+  </h1>
   <form method="POST" action="">
-    {{!-- <div id="now-you-see-me"> --}}
     <fieldset>
-      <legend>Your Information</legend>
-      <div class="form-row">
-        <div class="col">
-          <input type="text" class="form-control" placeholder="First Name">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last Name">
-        </div>
+      <legend>
+        Your Information
+      </legend>
+      <div class="form-group">
+        <label for="first_name">
+          First Name
+        </label>
+        <input class="form-control" type="text" id="first_name" name="first_name" placeholder="First name" required />
       </div>
-      <div class="form-row">
-        <div class="col">
-          <input type="email" class="form-control" placeholder="E-mail" required>
-        </div>
+      <div class="form-group">
+        <label for="last_name">
+          Last Name
+        </label>
+        <input class="form-control" type="text" id="last_name" name="last_name" placeholder="Last name" required />
       </div>
-      {{!-- <button class="btn btn-danger">SUBMIT</button> --}}
+      <div class="form-group">
+        <label for="email">
+          Email
+        </label>
+        <input class="form-control" type="email" id="email" name="email" placeholder="email" required />
+      </div>
     </fieldset>
-    {{!-- </div> --}}
-    <br>
     <fieldset>
-      <legend>Recipe Information</legend>
+      <legend>
+        Recipe Information
+      </legend>
       <div class="form-group">
-        {{!-- <label for="title">Name of Recipe</label> --}}
-        <input type="text" class="form-control" id="title" name="title" placeholder="Super Awesome Recipe Name"
-          required>
+        <label for="title">
+          Name of Recipe
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          placeholder="Super Awesome Recipe Name"
+          required
+        />
       </div>
       <div class="form-group">
-        {{!-- <label for="exampleFormControlSelect1">Recipe Category</label> --}}
-        <select class="form-control" id="category" name="category" required>
-          {{!-- This list is set in the DB too. Any changes here need to be reflected with the table setup. --}}
-          <option value="entree">Entree</option>
-          <option value="side dish">Side Dish</option>
-          <option value="dessert">Dessert </option>
-        </select>
-      </div>
-      <div class="form-group">
-        {{!-- <label for="main_ingredient">Main Ingredient</label> --}}
-        <input list="suggestions" type="text" class="form-control" id="main_ingredient" name="main_ingredient"
-          placeholder="Main ingredient, e.g. chicken" required>
+        <label for="main_ingredient">
+          Main Ingredient
+        </label>
+        <input
+          list="suggestions"
+          type="text"
+          class="form-control"
+          id="main_ingredient"
+          name="main_ingredient"
+          placeholder="Main ingredient, e.g. chicken"
+          required
+        />
         <datalist id="suggestions">
-          {{!-- Update this with call to db to get all possible/already entered main ingredients --}}
+          {{! Update this with call to db to get all possible/already entered main ingredients }}
           <option value="chicken"></option>
           <option value="fish"></option>
           <option value="chocolate"></option>
@@ -50,45 +65,49 @@
           <option value="toast"></option>
         </datalist>
       </div>
-
       <div class="form-group">
-        {{!-- <label for="ingredients">Ingredients</label> --}}
-        <input type="text" class="form-control" id="ingredients" name="ingredients" aria-describedby="ingredients-help"
-          placeholder="Enter ingredients as comma separted list" required>
-        <small id="ingredients-help" class="form-text text-muted">Enter ingredients as a comma separated list, e.g.:
+        <label for="ingredients">
+          Ingredients
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="ingredients"
+          name="ingredients"
+          aria-describedby="ingredients-help"
+          placeholder="Enter ingredients as comma separted list"
+          required
+        />
+        <small id="ingredients-help" class="form-text text-muted">
+          Enter ingredients as a comma separated list, e.g.:
           chicken,
-          onions, peppers</small>
+          onions, peppers
+        </small>
       </div>
       <div class="form-group">
-        {{!-- <label for="exampleFormControlTextarea1">Directions</label> --}}
-        <textarea class="form-control" id="directions" name="directions" rows="7" placeholder="Directions" required></textarea>
+        <label for="exampleFormControlSelect1">
+          Recipe Category
+        </label>
+        <select class="form-control" id="category" name="category" required>
+          {{! This list is set in the DB too. Any changes here need to be reflected with the table setup. }}
+          <option value="entree">
+            Entree
+          </option>
+          <option value="side dish">
+            Side Dish
+          </option>
+          <option value="dessert">
+            Dessert
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">
+          Directions
+        </label>
+        <textarea class="form-control" id="directions" name="directions" rows="7" required></textarea>
       </div>
     </fieldset>
+    <input type="submit" value="Add Your Recipe" class="btn btn-danger btn-block" />
+  </form>
 </div>
-
-
-<input type="submit" value="Add Your Recipe" class="btn btn-danger btn-lg">
-</form>
-</div>
-
-{{!-- Note, JMB: The draft script below was renamed and won't work becuase I updated the the names and ids for the form fields to match what we need for our db --}}
-{{!-- <script src="/js/index.js"></script> --}}
-
-<style>
-  body {
-    background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?christmas') no-repeat fixed center center / cover;
-    min-height: 400px;
-  }
-
-  h1 {
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
-    color: red;
-    font-size: 100px;
-    margin-top: 25px;
-  }
-
-  .btn.btn-danger.btn-lg {
-    margin-left: 900px;
-  }
-</style>
