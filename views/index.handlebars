@@ -1,7 +1,7 @@
 <div class="conainter-fluid">
   <h1>Tis the Seasoning</h1>
   <h3>A Recipe-Sharing App. Test new flavors or impress by sharing one of your own...</h3>
-</div>
+
 
 
 {{!-- FUTURE DESIGN --}}
@@ -27,8 +27,11 @@
     {{/each}}
   </tbody>
 </table>
+
 <button class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="bottom" title="Impress Me">
   Impress Me<a href="/add-recipe"></a></button>
+</div>
+
 <script>
   $(document).ready(function () {
     $('#table_id').DataTable();
