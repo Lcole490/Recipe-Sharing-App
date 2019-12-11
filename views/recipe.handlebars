@@ -5,9 +5,6 @@
   </h1>
   {{/each}}
   {{! Accessing information about the recipe }}
-  {{!-- <h2>
-    Recipe Information
-  </h2> --}}
   {{#each recipe}}
   <div class="container">
     <div class="row justify-content-between">
@@ -52,49 +49,40 @@
     <div class="row justify-content-between">
       <div class="col-5">
         <dt>
-          Creator 
+          Creator
         </dt>
         <dd>
-          {{creator}} 
-      |
+          {{creator}}
+          |
           {{date_added}}
         </dd>
         </dl>
         {{/each}}
       </div>
       <div class="col-5">
-        
       </div>
     </div>
     {{! Accessing Comments on the Recipe }}
     <br>
     <div class="container">
-      {{!-- <h2>
-    Comments 
-  </h2> --}}
       <button class="accordion btn-danger" align="left">
         <h4>Comments</h4>
       </button>
       <div class="panel">
         {{#each recipe.comments}}
-        {{!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div> --}}
         <dl>
           <dt>
+            <br>
             {{this.commenter}}
           </dt>
           <dd>
             {{this.comment_text}}
           </dd>
-          {{!-- <dt>
-        added
-      </dt> --}}
           <dd>
             {{this.added}}
           </dd>
         </dl>
         <hr />
-
         {{/each}}
       </div>
     </div>
@@ -116,7 +104,7 @@
 
       .accordion {
         background-color: #eee;
-        color: #444;
+        color:#444;
         cursor: pointer;
         padding: 18px;
         width: 100%;
@@ -135,6 +123,7 @@
       .panel {
         padding: 0 18px;
         background-color: white;
+        opacity: .7;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.2s ease-out;
