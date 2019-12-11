@@ -16,6 +16,7 @@ router.get("/recipe/:id", (request, response) => {
   orm.selectFullRecipe(request.params.id, recipe => {
     orm.selectRecipeComments(request.params.id, comments => {
       recipe.comments = comments;
+      recipe.num_comments = comments.length;
       response.render("recipe", { recipe });
     });
   });
