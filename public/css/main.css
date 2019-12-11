@@ -3,7 +3,6 @@
 body {
   background: linear-gradient(hsla(0, 0%, 100%, 0.8) 0%, hsla(0, 0%, 100%, 0.8) 100%),
     url("https://source.unsplash.com/random/?christmas") no-repeat fixed center center / cover;
-  min-height: 400px;
 }
 
 h1 {
@@ -11,4 +10,15 @@ h1 {
   text-align: center;
   color: red;
   font-size: 6.5em;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+  margin-bottom: 4rem;
+}
+
+.add-recipe {
+  float:right;
+  margin: 3rem 0;
 }
