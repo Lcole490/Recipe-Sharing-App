@@ -1,144 +1,34 @@
-<div class="conainter-fluid">
-  <h1>Tis the Seasoning</h1>
-  <h3>A Recipe-Sharing App. Test new flavors or impress by sharing one of your own...</h3>
-
-
-
-{{!-- FUTURE DESIGN --}}
-<table id="table_id" class="display cell-border compact">
-  <thead>
-    <tr>
-      <th>Title</title>
-      </th>
-      <th>Main Ingredient</th>
-      <th>Category</th>
-      <th>Rating</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each recipe}}
-    <tr>
-      <td><a href="/recipe/{{recipe_id}}">
-          {{title}}</a></td>
-      <td>{{main_ingredient}}</td>
-      <td>{{category}}</td>
-      <td>{{votes}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
-
-<button class="btn btn-danger btn-lg" data-toggle="tooltip" data-placement="bottom" title="Impress Me">
-  Impress Me<a href="/add-recipe"></a></button>
-</div>
-
-<script>
-  $(document).ready(function () {
-    $('#table_id').DataTable();
-  });
-</script>
-
-
-
-<style>
-  body {
-    background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?christmas') no-repeat fixed center center / cover;
-    min-height: 400px;
-  }
-
-  h1 {
-    font-family: 'Great Vibes', cursive;
-    text-align: center;
-    color: red;
-    font-size: 100px;
-    margin-top: 25px;
-  }
-h3 {
-  text-align:center;
-  color: rgb(167, 52, 52);
-}
-  #table_id_wrapper.dataTables_wrapper.no-footer {
-    max-width: 75%;
-    margin: 100px 150px;
-  }
-
-  button {
-    margin-left: 900px;
-  }
-</style>
-{{!-- <div class="container-fluid home-hero">
-  <h1 class="display-1 text-center py-5">
-    INDEX
-  </h1>
-  <p class="text-center">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim consequuntur facere?
-  </p>
-</div>
-<ul class="nav navbar navbar-dark bg-dark justify-content-center mb-5">
-  <li class="nav-item">
-    <a class="nav-link" href="#">
-      link
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">
-      Link
-    </a>
-  </li>
-</ul>
 <div class="container">
-  <table class="table">
+  <h1>Tis the Seasoning</h1>
+  <h2>A Recipe-Sharing App. Test new flavors or impress by sharing one of your own...</h2>
+
+  <table id="table_id" class="cell-border compact">
     <thead>
       <tr>
-        <th>
-          Title
-        </th>
-        <th>
-          Category
-        </th>
-        <th>
-          Main Ingredient
-        </th>
-        <th>
-          Votes
-        </th>
+        <th>Title</th>
+        <th>Main Ingredient</th>
+        <th>Category</th>
+        <th>Rating</th>
       </tr>
     </thead>
     <tbody>
       {{#each recipe}}
-        <tr>
-          <td>
-            <a href="/recipe/{{recipe_id}}">
-              {{title}}
-            </a>
-          </td>
-          <td>
-            {{category}}
-          </td>
-          <td>
-            {{main_ingredient}}
-          </td>
-          <td>
-            {{votes}}
-          </td>
-        </tr>
+      <tr>
+        <td><a href="/recipe/{{recipe_id}}">
+            {{title}}</a></td>
+        <td>{{main_ingredient}}</td>
+        <td>{{category}}</td>
+        <td>{{votes}}</td>
+      </tr>
       {{/each}}
     </tbody>
   </table>
 
+  <a href="/add-recipe" class="btn btn-large btn-danger add-recipe">Impress Me</a>
 
-  .home-hero h1,
-  .home-hero p {
-    text-shadow: 0px 1px 2px hsla(0, 0%, 0%, .22);
-  }
-
-  .fake-nav {
-    background: #333;
-    padding: 1rem;
-    color: white;
-  }
-
-  .nav a {
-    color: white;
-  }
-</div> --}}
+  <script>
+    $(document).ready(function () {
+      $('#table_id').DataTable();
+    });
+  </script>
+</div>
