@@ -74,13 +74,15 @@
           <dt>
             <br>
             {{this.commenter}}
+            |
+          {{!-- <dd> --}}
+            {{this.added}}
+          {{!-- </dd> --}}
           </dt>
           <dd>
             {{this.comment_text}}
           </dd>
-          <dd>
-            {{this.added}}
-          </dd>
+
         </dl>
         <hr />
         {{/each}}
@@ -104,7 +106,7 @@
 
       .accordion {
         background-color: #eee;
-        color:#444;
+        color: #444;
         cursor: pointer;
         padding: 18px;
         width: 100%;
