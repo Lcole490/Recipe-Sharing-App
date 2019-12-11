@@ -44,13 +44,18 @@ app.set ('view-engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 
 app.get('/', checkAuthenticated, (req, res) => {
-res.render('index.ejs', {name: "Nick"})
+res.render('index.ejs', {name: req.user.name})
+});
+
+app.get('/test', checkAuthenticated, (req, res) => {
+res.render('test.ejs', {name: req.user.name})
 });
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
-  res.render('login.ejs', {name: "Nick"})
+  res.render('login.ejs')
   });
 
+  
 app.post('/login',checkNotAuthenticated, passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/login',
