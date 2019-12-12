@@ -1,7 +1,8 @@
 USE holiday;
 
 INSERT INTO
-    users (last_name, first_name, email)
+    users
+    (last_name, first_name, email)
 VALUES
     ('Bodnar', 'Jonathan', 'jon@fake-email.com'),
     ('Oliver', 'Kaiisha', 'kaiisha@fake-email.com'),
@@ -10,13 +11,14 @@ VALUES
     ("Upshaw", "Nick", "nick@fake-email.com");
 
 INSERT INTO
-    recipes (
-        title,
-        main_ingredient,
-        ingredients,
-        directions,
-        category,
-        user_id
+    recipes
+    (
+    title,
+    main_ingredient,
+    ingredients,
+    directions,
+    category,
+    user_id
     )
 VALUES
     (
@@ -34,10 +36,21 @@ VALUES
         'Separate the stems from the mushroom caps and chop them. Process with herbs and breadcrumbs and stuff the mushroom caps with the mixture. Sprinkle with parmesan and bake until the cheese starts to brown and the mushroom caps release some of their water.',
         'side dish',
         3
+    ),
+    (
+        'Oreo Truffles',
+        "Oroes",
+        'oreo cookies, cream cheese, chocolate',
+        'To make 50 truffles:Crush a packet of Oreo cookies(family size) in a food processor. Add 8oz of cream cheese to the Oreo powder. Make bite size balls. Refrigerate the Oreo balls for 10 minutes. Heat chocolate in a microwave by checking every 30 seconds for needed consistency. Dip the Oreo balls in melted chocolate and set aside to dry on wax paper..',
+        'dessert',
+        4
     );
 
+
+
 INSERT INTO
-    comments (comment_text, user_id, recipe_id)
+    comments
+    (comment_text, user_id, recipe_id)
 VALUES
     (
         "Good god almighty! Who the hell would eat this. Wait...Oh my! It's really good. No. It's freakin' awesome! A-W-E-S-O-M-E-!",
