@@ -6,7 +6,8 @@ USE holiday;
 
 CREATE TABLE users (
   user_id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  password VARCHAR(200) NOT NULL DEFAULT "password",
+  username VARCHAR(50) NOT NULL DEFAULT "username",
+  PASSWORD VARCHAR(200) NOT NULL DEFAULT "password",
   last_name VARCHAR(30) NOT NULL,
   first_name VARCHAR(30) NOT NULL,
   email VARCHAR(100) NOT NULL,
