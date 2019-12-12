@@ -68,7 +68,7 @@
   <br>
   <div class="container">
     <button class="accordion btn-danger" align="left">
-      <h4>Comments</h4>
+      <h4>Comments ({{recipe.num_comments}})</h4>
     </button>
     <div class="panel">
       {{#each recipe.comments}}
@@ -119,6 +119,7 @@
 
     }
   </style>
+  
   <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
