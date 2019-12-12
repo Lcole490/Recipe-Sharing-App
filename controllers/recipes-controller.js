@@ -19,7 +19,7 @@ const app = express();
 const initializePassport = require("../config/passport.config")
 initializePassport(
   passport, 
-  email => holidayDB.users.find(users => users.email === email),
+  email => users.find(users => users.email === email),
   id => users.find(user => user.id === id)
 );
 
@@ -35,9 +35,9 @@ app.use(passport.session());
 app.use(methodOverride('_method'))
 
 //Login 
-router.get('/', checkAuthenticated, (req, res) => {
-  res.render('./views/index.handlebars', {name: holidayDB.request.users.email})
-  });
+// router.get('/',  (req, res) => {
+//   res.render('index', {name: "Nick"})
+//   });
 
 router.get('/login', (request, response) => {
   response.render('login')
@@ -48,7 +48,7 @@ router.get('/login', (request, response) => {
     failureFlash: true,
   }));  
   router.get('/register', checkNotAuthenticated, (request, response) => {
-    response.render('register', {name: holidayDB.request.users.email})
+    response.render('register', {name: "Nick"})
     })
   
   router.post('/register', checkNotAuthenticated, async (request, response) => {
