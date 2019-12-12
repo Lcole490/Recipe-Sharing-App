@@ -55,11 +55,12 @@ router.get('/login', (request, response) => {
      try{
        const hashedPassword = await bcryptjs.hash(holidayDB.request.body.password, 10)
        holidayDB.addUser({
+         userName: req.body.userName,
+         password: hashedPassword,
          firstName: req.body.firstName,
          lastName: req.body.lastName,
-         userName: req.body.userName,
          email: req.body.email,
-         password: hashedPassword,
+        
        })
       
        response.redirect('/login')
@@ -110,6 +111,7 @@ router.get("/recipe/:id", (request, response) => {
   orm.selectFullRecipe(request.params.id, recipe => {
     orm.selectRecipeComments(request.params.id, comments => {
       recipe.comments = comments;
+      recipe.num_comments = comments.length;
       response.render("recipe", { recipe });
     });
   });

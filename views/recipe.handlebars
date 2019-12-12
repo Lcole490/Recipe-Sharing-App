@@ -5,9 +5,6 @@
   </h1>
   {{/each}}
   {{! Accessing information about the recipe }}
-  {{!-- <h2>
-    Recipe Information
-  </h2> --}}
   {{#each recipe}}
   <div class="container">
     <div class="row justify-content-between">
@@ -32,14 +29,28 @@
             {{ingredients}}
           </dd>
       </div>
-
-      <div class="col-5">
+      <div class="col-7">
         <dt>
           Directions
         </dt>
         <dd>
           {{directions}}
         </dd>
+      </div>
+    </div>
+<hr>
+    <div class="row justify-content-between">
+      <div class="col-5">
+        <dt>
+          Creator
+        </dt>
+        <dd>
+          {{creator}}
+          |
+          {{date_added}}
+        </dd>
+      </div>
+      <div class="col-7">
         <dt>
           Votes
         </dt>
@@ -47,97 +58,36 @@
           {{votes}}
         </dd>
       </div>
+      </dl>
+      {{/each}}
     </div>
-
-
-    <dt>
-      Creator
-    </dt>
-    <dd>
-      {{creator}}
-    </dd>
-    <dt>
-      Date Added
-    </dt>
-    <dd>
-      {{date_added}}
-    </dd>
-    </dl>
-    {{/each}}
   </div>
   {{! Accessing Comments on the Recipe }}
   <br>
-<div class="container">
-  {{!-- <h2>
-    Comments 
-  </h2> --}}
-    <button class="accordion btn-danger" align= "left"><h4>Comments</h4></button>
-  <div class="panel">
-  {{#each recipe.comments}}
-    {{!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div> --}}
-    <dl>
-      <dt>
-        {{this.commenter}}
-      </dt>
-      <dd>
-        {{this.comment_text}}
-      </dd>
-      {{!-- <dt>
-        added
-      </dt> --}}
-      <dd>
-        {{this.added}}
-      </dd>
-    </dl>
-    <hr />
- 
-  {{/each}} 
+  <div class="container">
+    <button class="accordion btn-danger" align="left">
+      <h4>Comments ({{recipe.num_comments}})</h4>
+    </button>
+    <div class="panel">
+      {{#each recipe.comments}}
+      <dl>
+        <dt>
+          <br>
+          {{this.commenter}}
+          |
+          {{this.added}}
+        </dt>
+        <dd>
+          {{this.comment_text}}
+        </dd>
+      </dl>
+      <hr />
+      {{/each}}
+    </div>
   </div>
-</div>
 
 
-  <style>
-    body {
-      background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?christmas') no-repeat fixed center center / cover;
-      min-height: 400px;
-    }
-
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      text-align: center;
-      color: red;
-      font-size: 100px;
-      margin-top: 25px;
-    }
-
-    .accordion {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      transition: 0.4s;
-    }
-
-    .active,
-    .accordion:hover {
-      background-color: #ccc;
-    }
-
-    .panel {
-      padding: 0 18px;
-      background-color: white;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-
-    }
-  </style>
+  
   <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
