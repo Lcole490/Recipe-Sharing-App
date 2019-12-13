@@ -1,6 +1,6 @@
 # Group7-Project2
 
-### Holli-Share App (New Name TBD)
+### Tis The Seasoning (Holiday/Recipe-share APP)
 
 Purpose:
 
@@ -12,7 +12,7 @@ Initial Goals for App:
 
     * User should be able to give the title of the recipe they create
         Ex: "Jon's World Famous Spaghetti"
-        Ex: "Aruna's Truffles"
+        Ex: "Aruna's Chocolate Truffles"
 
     * User should be allowed to attach their name or remain anonymous (tagged to the recipe they create)
         Ex: "Cheddar-Stuffed Turkey" - Anonymous     
@@ -35,21 +35,21 @@ Initial Goals for App:
         - Individual Recipe Page
 
     
-    -->  Home Page: User is welcomed and Title of App is displayed. 
-                    Below the main banner will be 4 categories from which user will select (Entree, Side, Dessert, Drink)
-                    Under each they have option to search for a recipe or contribute their own recipe
+    >  Home Page: User is welcomed and Title of App is displayed. 
+                  Below the main banner will be 4 categories from which user will select (Entree, Side, Dessert, Drink) Under each they have option to search for a recipe or contribute their own recipe
 
     
-    -->  Search Page: User is presented with a search field. Kind of search they can made is TBD (search by main item, ingredient, etc)
-                      When the search is submitted, table is returned with recipes related to the search
-                      Table can display name of dish, submitted by, rating, picture, short summary of dish
-    -->  Recipe Submittal Page: Primarily a form is presented to the user. They will be able to select the category of the dish (Entree, Side, Dessert, Drink)
-                                and also be able to type in the main ingredient (Chicken, Fish, Potatoes, etc). The form will have areas for the user to enter
-                                the name of the dish in addition to including their own name as the author if they desire to. A textarea will be provided 
-                                for listing secondary items, cooking time and directions
+    >  Search Page: User is presented with a search field. Kind of search they can made is TBD (search by main item, ingredient, etc)
+                    When the search is submitted, table is returned with recipes related to the search
+                    Table can display name of dish, submitted by, rating, picture, short summary of dish
 
-    -->  Individual Recipe Page: When user selects a recipe from the search page, they are then transferred to a separate page that is dedicated to that recipe.
-                                 On this page, they can see the picture of the dish, more detailed directions, and comments left by other users
+    >  Recipe Submittal Page: Primarily a form is presented to the user. They will be able to select the category of the dish (Entree, Side, Dessert, Drink)
+                              and also be able to type in the main ingredient (Chicken, Fish, Potatoes, etc). The form will have areas for the user to enter
+                              the name of the dish in addition to including their own name as the author if they desire to. A textarea will be provided 
+                              for listing secondary items, cooking time and directions
+
+    >  Individual Recipe Page: When user selects a recipe from the search page, they are then transferred to a separate page that is dedicated to that recipe.
+                               On this page, they can see the picture of the dish, more detailed directions, and comments left by other users
 
 ### Library:
 
@@ -58,6 +58,7 @@ We will be using Datatables as our library to house info from recipe in a table 
 ## Sketch
 
 <img src="assets/images/Home Page Sketch.png" style="width='100%'">
+
 ### Future Scope:
 
 *   User authentication/ login. 
@@ -72,7 +73,7 @@ We will be using Datatables as our library to house info from recipe in a table 
     > ADVANCED: Incorporate algorithms or user history to recommend future recipes or users/cookbooks to subscribe to.
 
 
-### More Information to Follow ....
+
 
 ## Link to Assignment:
 https://gt.bootcampcontent.com/GT-Coding-Boot-Camp/gt-atl-fsf-pt-08-2019-u-c/wikis/Project-02
