@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes&display=swap");
 
 body {
-  background: linear-gradient(hsla(0, 0%, 100%, 0.8) 0%, hsla(0, 0%, 100%, 0.8) 100%),
-    url("https://source.unsplash.com/random/?christmas") no-repeat fixed center center / cover;
-    padding-top: 2rem;
+  background: linear-gradient(
+      hsla(0, 0%, 100%, 0.8) 0%,
+      hsla(0, 0%, 100%, 0.8) 100%
+    ),
+    url("https://source.unsplash.com/random/?christmas") no-repeat fixed center
+      center / cover;
+  padding-top: 2rem;
 }
 
 h1 {
