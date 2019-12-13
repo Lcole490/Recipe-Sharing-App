@@ -36,6 +36,14 @@ const orm = {
       else cb(rows);
     });
   },
+  // findUserById
+  findUserById(id, cb) {
+    const query = "SELECT * FROM users WHERE user_id = ?";
+    holidayDB.query(query, [id], (error, rows) => {
+      if (error) throw error;
+      else cb(rows);
+    });
+  },
   // Add recipe, known user
   addRecipeKnownUser(data, cb) {
     const query =

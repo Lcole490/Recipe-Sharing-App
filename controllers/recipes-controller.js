@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const router = express.Router();
 const orm = require("../config/orm.js");
-const holidayDB = require("../config/connection");
+// const holidayDB = require("../config/connection");
 
 // ===== PAGE ROUTES ===== //
 require("dotenv").config();
