@@ -1,8 +1,9 @@
 <div class="container">
+  <h1><a href="/" class="title-link">‘Tis the Season...ing</a></h1>
   {{#each recipe}}
-  <h1>
+  <h2>
     {{title}}
-  </h1>
+  </h2>
   {{/each}}
   {{! Accessing information about the recipe }}
   {{#each recipe}}
@@ -38,7 +39,7 @@
         </dd>
       </div>
     </div>
-<hr>
+    <hr>
     <div class="row justify-content-between">
       <div class="col-5">
         <dt>
@@ -87,7 +88,7 @@
   </div>
 
 
-  
+
   <script>
     var acc = document.getElementsByClassName("accordion");
     var i;

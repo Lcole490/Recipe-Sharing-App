@@ -2,8 +2,8 @@
 
 body {
   background: linear-gradient(
-      hsla(0, 0%, 100%, 0.8) 0%,
-      hsla(0, 0%, 100%, 0.8) 100%
+      hsla(0, 0%, 100%, 0.85) 0%,
+      hsla(0, 0%, 100%, 0.85) 100%
     ),
     url("https://source.unsplash.com/random/?christmas") no-repeat fixed center
       center / cover;
@@ -15,6 +15,19 @@ h1 {
   text-align: center;
   color: red;
   font-size: 6.5em;
+}
+
+.title-link {
+  color:red;
+  text-shadow: 1px 2px 4px hsla(0, 0%, 0%, .2);
+  transition: text-shadow .2s ease;
+}
+
+.title-link:hover {
+  color:red;
+  text-decoration:none;
+  text-shadow: none;
+  
 }
 
 h2 {
@@ -53,4 +66,13 @@ h2 {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+td a {
+  color:red;
+}
+
+td a:hover {
+  color:red;
+  text-decoration: underline;
 }
