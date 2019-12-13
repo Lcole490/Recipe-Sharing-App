@@ -1,8 +1,103 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const express = require("express");
 const router = express.Router();
 const orm = require("../config/orm.js");
+const holidayDB = require("../config/connection");
 
 // ===== PAGE ROUTES ===== //
+require("dotenv").config();
+const bcryptjs = require("bcryptjs");
+const passport = require("passport")
+const flash = require("express-flash")
+const session = require("express-session")
+const methodOverride = require('method-override')
+const app = express();
+
+const initializePassport = require("../config/passport.config")
+initializePassport(
+  passport, 
+  email => users.find(users => users.email === email),
+  id => users.find(user => user.id === id)
+);
+
+//<--------Authentication code--------->//
+app.use(flash());
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride('_method'))
+
+//Login 
+// router.get('/',  (req, res) => {
+//   res.render('index', {name: "Nick"})
+//   });
+
+router.get('/login', (request, response) => {
+  response.render('login')
+  });
+  router.post('/login',checkNotAuthenticated, passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true,
+  }));  
+  router.get('/register', checkNotAuthenticated, (request, response) => {
+    response.render('register', {name: "Nick"})
+    })
+  
+  router.post('/register', checkNotAuthenticated, async (request, response) => {
+     try{
+       const hashedPassword = await bcryptjs.hash(holidayDB.request.body.password, 10)
+       holidayDB.addUser({
+         username: req.body.userName,
+         password: hashedPassword,
+         first_name: req.body.firstName,
+         last_name: req.body.lastName,
+         email: req.body.email,
+        
+       })
+      
+       response.redirect('/login')
+     }catch{
+       response.redirect('/register')
+     }
+  });
+  
+  router.delete('/logout', (request, response) => {
+    request.logOut()
+    response.redirect('/login')
+  });
+
+router.post('/login',checkNotAuthenticated, passport.authenticate('local', {
+successRedirect: '/',
+failureRedirect: '/login',
+failureFlash: true,
+}));  
+
+function checkAuthenticated(request, response, next) {
+if (request.isAuthenticated()) {
+  return next()
+}
+
+response.redirect('/login');
+};
+
+function checkNotAuthenticated(request, response, next) {
+if (request.isAuthenticated()) {
+ return response.redirect('/')
+}
+
+return next();
+};
+
+
+//<--------- End of Authentication code--------->//
 
 // Homepage
 router.get("/", (request, response) => {
@@ -16,6 +111,7 @@ router.get("/recipe/:id", (request, response) => {
   orm.selectFullRecipe(request.params.id, recipe => {
     orm.selectRecipeComments(request.params.id, comments => {
       recipe.comments = comments;
+      recipe.num_comments = comments.length;
       response.render("recipe", { recipe });
     });
   });

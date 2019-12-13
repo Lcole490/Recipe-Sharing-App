@@ -8,7 +8,7 @@
   {{#each recipe}}
   <div class="container">
     <div class="row justify-content-between">
-      <div class="col-5">
+      <div class="col-5 top">
         <dl>
           <dt>
             Category
@@ -16,12 +16,14 @@
           <dd>
             {{category}}
           </dd>
+          <hr>
           <dt>
             Main Ingredient
           </dt>
           <dd>
             {{main_ingredient}}
           </dd>
+          <hr>
           <dt>
             Ingredients
           </dt>
@@ -66,7 +68,7 @@
   <br>
   <div class="container">
     <button class="accordion btn-danger" align="left">
-      <h4>Comments</h4>
+      <h4>Comments ({{recipe.num_comments}})</h4>
     </button>
     <div class="panel">
       {{#each recipe.comments}}
@@ -87,6 +89,7 @@
   </div>
 
 
+<<<<<<< HEAD
   <style>
     body {
       background: linear-gradient(hsla(0, 0%, 100%, .7) 0%, hsla(0, 0%, 100%, .7) 100%), url('https://source.unsplash.com/random/?christmas') no-repeat fixed center center / cover;
@@ -131,6 +134,10 @@
 
     }
   </style>
+=======
+  
+  
+>>>>>>> master
   <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
