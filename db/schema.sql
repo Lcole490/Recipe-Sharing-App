@@ -12,8 +12,7 @@ CREATE TABLE users (
   first_name VARCHAR(30) NOT NULL,
   email VARCHAR(100) NOT NULL,
   added TIMESTAMP NOT NULL DEFAULT NOW(),
-  PRIMARY KEY (user_id),
-  UNIQUE (email)
+  PRIMARY KEY (user_id)
 );
 
 CREATE TABLE recipes (
