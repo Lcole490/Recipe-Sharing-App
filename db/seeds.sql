@@ -1,13 +1,13 @@
 USE holiday;
 
 INSERT INTO
-    users (last_name, first_name, email)
+    users (username,password,last_name, first_name, email)
 VALUES
-    ('Bodnar', 'Jonathan', 'jon@fake-email.com'),
-    ('Oliver', 'Kaiisha', 'kaiisha@fake-email.com'),
-    ('Cole', 'Lavar', 'lavar@fake-email.com'),
-    ('Kolli', 'Aruna', 'aruna@fake-email.com'),
-    ("Upshaw", "Nick", "nick@fake-email.com");
+    ('JBodnar','password','Bodnar', 'Jonathan', 'jon@fake-email.com'),
+    ('','','Oliver', 'Kaiisha', 'kaiisha@fake-email.com'),
+    ('','','Cole', 'Lavar', 'lavar@fake-email.com'),
+    ('','','Kolli', 'Aruna', 'aruna@fake-email.com'),
+    ('','',"Upshaw", "Nick", "nick@fake-email.com");
 
 INSERT INTO
     recipes (

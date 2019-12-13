@@ -55,10 +55,10 @@ router.get('/login', (request, response) => {
      try{
        const hashedPassword = await bcryptjs.hash(holidayDB.request.body.password, 10)
        holidayDB.addUser({
-         userName: req.body.userName,
+         username: req.body.userName,
          password: hashedPassword,
-         firstName: req.body.firstName,
-         lastName: req.body.lastName,
+         first_name: req.body.firstName,
+         last_name: req.body.lastName,
          email: req.body.email,
         
        })
