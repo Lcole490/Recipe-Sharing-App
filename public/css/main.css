@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes&display=swap");
-
 body {
   background: linear-gradient(hsla(0, 0%, 100%, 0.8) 0%, hsla(0, 0%, 100%, 0.8) 100%),
     url("https://source.unsplash.com/random/?christmas") no-repeat fixed center center / cover;
     padding-top: 2rem;
 }
-
 h1 {
   font-family: "Great Vibes", cursive;
   text-align: center;
@@ -13,18 +11,15 @@ h1 {
   font-size: 6.5em;
   margin-top: 25px;
 }
-
 h2 {
   text-align: center;
   color: red;
   margin-bottom: 4rem;
 }
-
 .add-recipe {
   float: right;
   margin: 3rem 0;
 }
-
 .accordion {
   background-color: #eee;
   color: #444;
@@ -37,12 +32,10 @@ h2 {
   font-size: 15px;
   transition: 0.4s;
 }
-
 .active,
 .accordion:hover {
   background-color: #ccc;
 }
-
 .panel {
   padding: 0 18px;
   background-color: white;
