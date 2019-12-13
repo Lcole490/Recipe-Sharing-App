@@ -53,18 +53,19 @@ router.get('/login', (request, response) => {
   
   router.post('/register', checkNotAuthenticated, async (request, response) => {
      try{
-       const hashedPassword = await bcryptjs.hash(holidayDB.request.body.password, 10)
-       holidayDB.addUser({
-         username: req.body.userName,
-         password: hashedPassword,
-         first_name: req.body.firstName,
-         last_name: req.body.lastName,
-         email: req.body.email,
-        
-       })
-      
-       response.redirect('/login')
-     }catch{
+       const hashedPassword = await bcryptjs.hash(request.body.password, 10);
+       const {username,first_name,last_name,email} = request.body;
+      //  orm.users.addUser({
+      //    username: request.body.username,
+      //    password: hashedPassword,
+      //    first_name: request.body.first_name,
+      //    last_name: request.body.last_name,
+      //    email: request.body.email,
+        orm.addUser({username,hashedPassword,first_name,last_name,email});
+        response.redirect('/login');
+       }
+
+     },catch{
        response.redirect('/register')
      }
   });
