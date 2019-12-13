@@ -48,14 +48,19 @@ const orm = {
   // Add a user
   addUser(data, cb) {
     const query =
-      "INSERT INTO users (username,password,first_name, last_name, email) VALUES (?,? , ?, ?, ?)";
+      "INSERT INTO users (username, password, first_name, last_name, email) VALUES (?, ?, ?, ?, ?)";
     holidayDB.query(query, data, (error, rows) => {
       if (error) throw error;
       else cb(rows);
     });
+  },
+  registerUser(data) {
+    const query =
+      "INSERT INTO users (username, password, first_name, last_name, email) VALUES (?, ?, ?, ?, ?)";
+    holidayDB.query(query, data, (error, rows) => {
+      if (error) throw error;
+    });
   }
 };
-
-
 
 module.exports = orm;
