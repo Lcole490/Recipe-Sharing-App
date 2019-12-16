@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const orm = require("../config/orm.js");
+const recipe = require("../models/recipes.js")
 
 // ===== PAGE ROUTES ===== //
 
@@ -12,7 +13,7 @@ router.get("/", (request, response) => {
 });
 
 // Single recipe
-router.get("/recipe/:id", (request, response) => {
+router.get("/recipeold/:id", (request, response) => {
   orm.selectFullRecipe(request.params.id, recipe => {
     orm.selectRecipeComments(request.params.id, comments => {
       recipe.comments = comments;
@@ -21,7 +22,12 @@ router.get("/recipe/:id", (request, response) => {
     });
   });
 });
-
+// Single recipe
+router.get("/recipe/:id", (request, response) => {
+  recipe.findone(request.params.id, function(recipe){
+    response.render("recipe", { recipe });
+  })
+});
 // Recipe form
 router.get("/add-recipe", (request, response) => {
   response.render("add-recipe");
